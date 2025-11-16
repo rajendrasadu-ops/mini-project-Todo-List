@@ -51,3 +51,34 @@ function sortTodosByDate() {
     // Re-render the list
     renderTodos();
 }
+
+/// Checkboxes of completed tasks would go here
+function renderTodos() {
+    const todoList = document.getElementById("todo-list");
+    todoList.innerHTML = "";
+
+    todos.forEach((todo, index) => {
+        todoList.innerHTML += `
+        <li class="flex items-center gap-3">
+            <input 
+                type="checkbox" 
+                ${todo.completed ? "checked" : ""}
+                onclick="toggleCompleted(${index})"
+                class="w-5 h-5"
+            />
+
+            <p class="text-2xl ${todo.completed ? 'line-through text-gray-400' : ''}">
+                ${todo.text}
+                <span class="text-sm text-gray-500">(${todo.date})</span>
+            </p>
+        </li>
+        <hr/>
+        `;
+    });
+}
+
+/// Function to toggle the completed status of a todo item
+function toggleCompleted(index) {
+    todos[index].completed = !todos[index].completed;
+    renderTodos();
+}
