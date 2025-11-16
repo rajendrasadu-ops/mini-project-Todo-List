@@ -11,12 +11,6 @@ body {
 }
 
 .form-section {
-    display: flex;
+    display: grid;
     gap: 8px;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible columns */
-  gap: 20px;
 }
