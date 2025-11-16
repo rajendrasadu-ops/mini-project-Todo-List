@@ -11,6 +11,6 @@ body {
 }
 
 .form-section {
-    display: grid;
+    display: inline-grid;
     gap: 8px;
 }
