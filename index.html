@@ -9,21 +9,62 @@
     <!-- link to external css file -->
     <link rel="stylesheet" href="css\style.css">
 
+    <!-- Tailwind css cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body>
 
     <!-- header section -->
-    <header>
-        <h1>To-do List Apps</h1>
+    <header class="header-style">
+        <h1 class="text-2xl font-bold pb-5">To-do List Apps</h1>
     </header>
 
     <!-- main content -->
-    <main></main>
+    <main>
+        <!-- form section -->
+        <section class="form-section">
+            <form>
+                <!-- To-do's input -->
+                <input type="text" class="border rounded p-2" id="todo-input" placeholder="Add a new task...">
+
+                <!-- Date input -->
+                <input type="date" class="border rounded p-2" id="todo-date" placeholder="Due date">
+            </form>
+            
+            <!-- add button -->
+            <button type="button" onclick="addTodos();" class="border rounded p-2 bg-green-500 text-white">Add To-do's</button>
+        </section>
+
+        <!-- action section -->
+        <section class="flex pt-2 justify-between">
+            <!-- sort options -->
+            <button onclick="sortTodosByDate();" class="border rounded p-2 bg-blue-500 text-white">Sort by Date</button> 
+            
+            <!-- clear all button -->
+            <button onclick="clearTodos();" class="border rounded p-2 bg-red-500 text-white">Clear All To-do's</button>
+        </section>
+
+        <!-- to-do's list section -->
+        <section class="pt-2">
+            <header>
+                <h1 class="text-2xl font-semibold">List of To-do's</h1>
+            </header>
+
+            <ul class="pt-2" id="todo-list">
+                <!-- To-do's will be dynamically added here -->
+                <li>No Available Tasks.</li>
+            </ul>
+        </section>
+    </main>
 
     <!-- footer section -->
-    <footer></footer>
+    <footer class="pt-5">
+        <p>&copy; 2025 To-do List Apps by Aldo. All rights reserved.</p>
+    </footer>
 
     <!-- link to external js file -->
     <script src="js/script.js"></script>
 </body>
+
 </html>

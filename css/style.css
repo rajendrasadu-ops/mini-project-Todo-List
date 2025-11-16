@@ -1,0 +1,16 @@
+body {
+    justify-items: center;
+    height: 100vh;
+    align-content: center;
+    display: grid;
+
+}
+
+.header-style {
+    color: #134077;
+}
+
+.form-section {
+    display: flex;
+    gap: 8px;
+}
